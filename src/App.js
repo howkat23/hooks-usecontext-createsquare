@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import MyTheme from './MyTheme';
+import React, { useState } from "react";
+import myFirstColor from './myFirstColor';
+
+
+
+export const ColorContext = React.createContext()
 
 function App() {
+
+  const [myColor, setMyColor] = useState(true);
+
+
+  function changeColor() {
+      setMyColor({myFirstColor} = !myFirstColor)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <h1>Click and the color will change</h1>
+        <ColorContext.Provider value={myColor}>
+            <button onClick={changeColor}>Change a color</button>
+            <MyTheme/>
+        </ColorContext.Provider>
     </div>
-  );
+  )
 }
 
 export default App;
