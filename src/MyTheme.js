@@ -1,12 +1,9 @@
 import { useContext } from "react";
 import { ColorContext } from "./App";
 
-
-
 function MyTheme() {
 
 const myColor = useContext(ColorContext);
-
 
     const themeIdeas = {
         backgroundColor: myColor ? 'pink' : 'blue',

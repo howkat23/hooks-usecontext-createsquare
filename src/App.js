@@ -1,10 +1,8 @@
 import MyTheme from './MyTheme';
 import React, { useState } from "react";
-import myFirstColor from './myFirstColor';
-
-
 
 export const ColorContext = React.createContext()
+
 
 function App() {
 
@@ -12,8 +10,9 @@ function App() {
 
 
   function changeColor() {
-      setMyColor({myFirstColor} = !myFirstColor)
+      setMyColor((myFirstColor) = !myFirstColor)
   }
+
 
   return (
     <div>
@@ -22,6 +21,7 @@ function App() {
             <button onClick={changeColor}>Change a color</button>
             <MyTheme/>
         </ColorContext.Provider>
+
     </div>
   )
 }
